@@ -11,7 +11,7 @@ public class OrangeHRMTests extends BaseTest {
         Login login = new Login(driver);
         login.login("Admin", "admin123");
         Assert.assertTrue(login.isDashboardDisplayed(), "Login failed - Dashboard not visible");
-        System.out.println("✓ Login verification completed");
+        System.out.println("Login verification completed");
     }
 
     @Test(priority = 2, description = "Test submitting leave request")
@@ -23,7 +23,7 @@ public class OrangeHRMTests extends BaseTest {
         try {
             leave.applyLeave("2025-11-10", "2025-11-12", "End-of-year personal leave");
             Thread.sleep(2000);
-            System.out.println("✓ Leave application executed successfully");
+            System.out.println(" Leave application executed successfully");
         } catch (Exception e) {
             System.out.println("Note: Leave request might have been submitted - " + e.getMessage());
         }
@@ -37,7 +37,7 @@ public class OrangeHRMTests extends BaseTest {
         Leave leave = new Leave(driver);
         leave.navigateToMyLeave();
         Assert.assertTrue(leave.isLeaveListDisplayed(), "Leave list not visible");
-        System.out.println("✓ Leave list viewing executed successfully");
+        System.out.println(" Leave list viewing executed successfully");
     }
 
     @Test(priority = 4, description = "Test adding new recruitment candidate")
@@ -56,7 +56,7 @@ public class OrangeHRMTests extends BaseTest {
 
         try {
             Thread.sleep(3000);
-            System.out.println("✓ Candidate addition executed successfully");
+            System.out.println(" Candidate addition executed successfully");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -70,7 +70,7 @@ public class OrangeHRMTests extends BaseTest {
         Recruitment recruitment = new Recruitment(driver);
         recruitment.goToCandidates();
         Assert.assertTrue(recruitment.isCandidateListVisible(), "Candidates table not visible");
-        System.out.println("✓ Candidate list viewing executed successfully");
+        System.out.println(" Candidate list viewing executed successfully");
     }
 
 }
